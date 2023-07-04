@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+</head>
+<body>
+    <h1> Welcome To Calculator Page !!! </h1>
+    <p> You can select Addition, Subtraction, Multiplication and Division from the options below</p>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="num1" id="num1">
+        <br><br>
+        <label>Operator:</label>
+        <select id="op" name="op">
+            <option value="add" id="add">Add</option>
+            <option value="sub" id="sub">Sub</option>
+            <option value="mul" id="mul">Mul</option>
+            <option value="div" id="div">Div</option>
+        </select>
+        <br><br>
+        <input type="number" name="num2" id="num2">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if answer %}
+        <h2>Result :{{ answer }}</h2>
+    {% endif %}
+</body>
+</html>

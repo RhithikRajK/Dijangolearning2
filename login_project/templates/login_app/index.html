@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <h1> Welcome to the Home Page </h1>
+    <br>
+    <div>
+        <ul>
+            <li><a href = "{% url 'login_app:register' %}">Register</a></li>
+            <li><a href = "{% url 'login_app:login' %}">Login</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div >
+            <div>
+                {{form.media}}
+                {{form.as_p}}
+            </div>
+            <input type="submit"  onclick="Converter()">
+        </div>
+        <div>
+            <div>
+                <h2>Your Html Code is:</h2>
+                <div>
+                    <textarea rows="20" cols="100" id='htmldata'></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function Converter(){
+        var x = CKEDITOR.instances['id_body'].getData();
+        var y=document.getElementById('htmldata');
+        y.innerHTML=x;
+    }
+</script>

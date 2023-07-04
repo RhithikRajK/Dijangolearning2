@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <ul>
+        <li><a href = "{% url 'index' %}">Home</a></li>
+        <li><a href = "{% url 'login_app:login' %}">LogIn</a></l>
+    </ul>
+    <h1> Welcome to register page </h1>
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+    {% if forme %}
+        {{ forme }}
+    {% endif %}
+</body>
+</html>

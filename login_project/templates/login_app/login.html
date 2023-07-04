@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <ul>
+        <li><a href = "{% url 'index' %}">Home</a></li>
+        <li><a href = "{% url 'login_app:register' %}">Register</a></li>
+    </ul>
+    <h1> Welcome to login Page: </h1>
+    <form enctype="multipart/form-data" method='POST'>
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input type="text" name="usern" placeholder="Enter Username" id="usern">
+        <p></p>
+        <label for="password">Password</label>
+        <input type="password" name="passwo" placeholder="Enter Password" id="passwo">
+        <p></p>
+        <input type="submit" value="Submit">
+    </form>
+    {% if logine %}
+        {{ logine }}
+    {% endif %}
+</body>
+</html>

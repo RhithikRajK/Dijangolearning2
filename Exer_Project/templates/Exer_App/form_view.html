@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Welcome to Templates</h1>
+    <div class="division">
+        {% if employee %}
+            <table>
+                <thead>
+                    <th>EMPLOYEE NAME</th>
+                    <th>EMPLOYEE AGE</th>
+                    <th>EMPLOYEE ADDRESS</th>
+                </thead>
+                {% for acc in employee %}
+                    <tr>
+                        <td>{{ acc.name }}</td>
+                        <td>{{ acc.age }}</td>
+                        <td>{{ acc.address }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h1>No Records Found</h1>
+        {% endif %}
+    </div>
+
+</body>
+</html>
